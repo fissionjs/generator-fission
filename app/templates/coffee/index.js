@@ -7,6 +7,7 @@ module.exports = function(coffeeGenerator){
   }
   //populat client
   coffeeGenerator.src.copy('coffee/client/gulpfile.coffee', 'gulpfile.coffee');
+  coffeeGenerator.src.copy('coffee/start.coffee', 'start.coffee');
   coffeeGenerator.src.copy('coffee/client/app.coffee', 'client/app.coffee');
   coffeeGenerator.src.copy('coffee/client/start.coffee', 'client/start.coffee');
   coffeeGenerator.src.copy('coffee/client/models/Todo.coffee', 'client/models/Todo.coffee');
