@@ -6,7 +6,7 @@ module.exports = function(coffeeGenerator){
     //populate server
   }
   //populat client
-  coffeeGenerator.src.copy('coffee/client/gulpfile.coffee', 'client/gulpfile.coffee');
+  coffeeGenerator.src.copy('coffee/client/gulpfile.coffee', 'gulpfile.coffee');
   coffeeGenerator.src.copy('coffee/client/app.coffee', 'client/app.coffee');
   coffeeGenerator.src.copy('coffee/client/start.coffee', 'client/start.coffee');
   coffeeGenerator.src.copy('coffee/client/models/Todo.coffee', 'client/models/Todo.coffee');

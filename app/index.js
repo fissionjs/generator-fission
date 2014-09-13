@@ -76,14 +76,14 @@ var FissionGenerator = yeoman.generators.Base.extend({
       }
 
       if(this.options.coffee){
-        console.log('MAKE IT IN COFFEE');
-        // this.npmInstall(['coffee'], {'save': true}, function(){
-        //   console.log('installed coffee to pkg.json');
-        // });
+          console.log('MAKE IT COFFEE');
+         this.npmInstall(['coffee'], {'save': true}, function(){
+           console.log('installed coffee to pkg.json');
+         });
         fissionCoffee(this);
       }
       else{
-        console.log('MAKE IT VANILLA');
+        console.log('MAKE IT JAVASCRIPT');
         fissionJs(this);
       }
     },
@@ -95,22 +95,22 @@ var FissionGenerator = yeoman.generators.Base.extend({
   },
 
   end: function () {
-    // var toInstall = [];
-    // var dependencies = this.pkg.dependencies;
-    //
-    // for(var k in dependencies){
-    //   toInstall.push(k);
-    //   console.log('depends: '+k);
-    // }
-    //
-    // for (var x in this.pkg.devDependencies){
-    //   toInstall.push(x);
-    //   console.log('devDepends: '+x);
-    // }
-    //
-    // this.npmInstall(toInstall, function(){
-    //   console.log('dependencies have been installed');
-    // });
+    var toInstall = [];
+    var dependencies = this.pkg.dependencies;
+
+    for(var k in dependencies){
+      toInstall.push(k);
+      console.log('depends: '+k);
+    }
+
+    for (var x in this.pkg.devDependencies){
+      toInstall.push(x);
+      console.log('devDepends: '+x);
+    }
+
+    this.npmInstall(toInstall, function(){
+      console.log('dependencies have been installed');
+    });
   }
 });
 
