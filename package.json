@@ -1,6 +1,6 @@
 {
   "name": "generator-fission",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Yeoman generator fission",
   "license": "MIT",
   "main": "app/index.js",
