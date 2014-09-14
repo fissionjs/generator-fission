@@ -76,17 +76,17 @@ var FissionGenerator = yeoman.generators.Base.extend({
       }
 
       if(this.options.coffee){
-          console.log('MAKE IT COFFEE');
-         this.npmInstall(['coffee-script'], {'save': true}, function(){
-           console.log('installed coffee to pkg.json');
+         this.npmInstall(['coffee-script'], {'save': true}, function(err){
+           if(err){console.log('err installing dependencies');}
+           else{console.log('installed coffee to pkg.json');}
          });
-         this.npmInstall(['coffeeify'], {'savedev': true}, function(){
-           console.log('Installed coffeeify to pkg.json-dev');
+         this.npmInstall(['coffeeify'], {'savedev': true}, function(err){
+           if(err){console.log('err installing dev dependencies');}
+           else{console.log('Installed dev coffee to pkg.json-dev');}
          });
         fissionCoffee(this);
       }
       else{
-        console.log('MAKE IT JAVASCRIPT');
         fissionJs(this);
       }
     },
