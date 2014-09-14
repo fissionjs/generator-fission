@@ -67,11 +67,11 @@ var FissionGenerator = yeoman.generators.Base.extend({
         this.dest.mkdir('server/models');
 
         //require server package.json
-        this.pkg = require('../_withServerPackage.json');
+        this.pkg = require('_withServerPackage.json');
         this.src.copy('_withServerPackage.json', 'package.json');
       }
       else{
-        this.pkg = require('../_withoutServerPackage.json');
+        this.pkg = require('_withoutServerPackage.json');
         this.src.copy('_withoutServerPackage.json', 'package.json');
       }
 
