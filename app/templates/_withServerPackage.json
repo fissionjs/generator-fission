@@ -1,6 +1,6 @@
 {
-  "name": "Fission-Todo",
-  "description": "Fissionjs Todo example - coffee-script",
+  "name": "Fission-Item",
+  "description": "Fissionjs Item example - coffee-script",
   "version": "0.0.1",
   "homepage": "http://github.com/fissionjs/examples",
   "repository": "git://github.com/fissionjs/examples.git",

@@ -10,7 +10,7 @@ module.exports = function(jsGenerator){
   jsGenerator.src.copy('js/start.js', 'start.js');
   jsGenerator.src.copy('js/client/app.js', 'client/app.js');
   jsGenerator.src.copy('js/client/start.js', 'client/start.js');
-  jsGenerator.src.copy('js/client/models/Todo.js', 'client/models/Todo.js');
+  jsGenerator.src.copy('js/client/models/Item.js', 'client/models/Item.js');
   jsGenerator.src.copy('js/client/pages/Index/Index.View.js', 'client/pages/Index/Index.View.js');
   jsGenerator.src.copy('js/client/pages/NotFound/NotFound.View.js', 'client/pages/NotFound/NotFound.View.js');
 

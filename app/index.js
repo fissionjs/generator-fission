@@ -3,7 +3,8 @@ var util = require('util');
 var path = require('path');
 var yeoman = require('yeoman-generator');
 var yosay = require('yosay');
-console.log(__dirname);
+
+
 var fissionCoffee = require(path.join(__dirname,'templates/coffee'));
 var fissionJs = require(path.join(__dirname, 'templates/js'));
 var FissionGenerator = yeoman.generators.Base.extend({

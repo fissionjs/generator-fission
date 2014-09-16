@@ -10,7 +10,7 @@ module.exports = function(coffeeGenerator){
   coffeeGenerator.src.copy('coffee/start.coffee', 'start.coffee');
   coffeeGenerator.src.copy('coffee/client/app.coffee', 'client/app.coffee');
   coffeeGenerator.src.copy('coffee/client/start.coffee', 'client/start.coffee');
-  coffeeGenerator.src.copy('coffee/client/models/Todo.coffee', 'client/models/Todo.coffee');
+  coffeeGenerator.src.copy('coffee/client/models/Info.coffee', 'client/models/Info.coffee');
   coffeeGenerator.src.copy('coffee/client/pages/Index/Index.View.coffee', 'client/pages/Index/Index.View.coffee');
   coffeeGenerator.src.copy('coffee/client/pages/NotFound/NotFound.View.coffee', 'client/pages/NotFound/NotFound.View.coffee');
 };
