@@ -7,10 +7,6 @@ PORT = Number process.env.PORT or 8080
 app = express()
 app.use express.static join __dirname, 'public'
 
-app.use (err, req, res, next) ->
-  console.error err.stack
-  res.send 500, 'Something broke!'
-
 # Serve spa
 app.get '/*', (req, res) ->
   idxFile = join __dirname, 'public/index.html'

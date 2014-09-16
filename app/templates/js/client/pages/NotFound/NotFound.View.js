@@ -1,3 +1,5 @@
+'use strict';
+
 var fission = require('../../app');
 
 var DOM = fission.React.DOM;

@@ -1,4 +1,5 @@
 'use strict';
+
 var express = require('express');
 var http = require('http');
 var join = require('path').join;
@@ -8,11 +9,6 @@ var PORT = Number(process.env.PORT || 8080);
 var app = express();
 
 app.use(express['static'](join(__dirname, 'public')));
-
-app.use(function(err, req, res, next) {
-  console.error(err.stack);
-  return res.send(500, 'Something broke!');
-});
 
 app.get('/*', function(req, res){
   var idxFile = join(__dirname, 'public/index.html');

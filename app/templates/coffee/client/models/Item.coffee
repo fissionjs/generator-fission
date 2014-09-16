@@ -6,5 +6,4 @@ module.exports =
     props:
       id: 'integer'
       text: 'string'
-      done: 'boolean'
-    url: '/v1/todos'
+    url: '/v1/item'
