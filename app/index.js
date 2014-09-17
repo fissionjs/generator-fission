@@ -22,16 +22,17 @@ var FissionGenerator = yeoman.generators.Base.extend({
     ));
 
     var prompts = [{
-      type: 'confirm',
-      name: 'createWithServer',
-      message: 'Would you like to create with a server?',
-      default: true
-    },{
-      type: 'input',
-      name: 'projectName',
-      message: 'Your project name: ',
-      default: 'fissionProject'
-    }];
+        type: 'input',
+        name: 'projectName',
+        message: 'Your project name: ',
+        default: 'fissionProject'
+      },
+      {
+        type: 'confirm',
+        name: 'createWithServer',
+        message: 'Would you like to create with a server?',
+        default: true
+      }];
 
     this.prompt(prompts, function (props) {
       this.createWithServer = props.createWithServer;
@@ -39,6 +40,15 @@ var FissionGenerator = yeoman.generators.Base.extend({
       console.log(this.projectName);
       done();
     }.bind(this));
+  },
+
+  configuring: function() {
+    if(this.options.coffee){
+      this.config.set({'coffee': 'true'});
+    }
+    else{
+      this.config.set({'coffee': 'false'});
+    }
   },
 
   writing: {

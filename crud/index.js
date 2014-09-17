@@ -1,11 +1,14 @@
 'use strict';
+var path = require('path');
 
 var yeoman = require('yeoman-generator');
+var coffeeCrud = require(path.join(__dirname,'templates/coffee'));
+//var jsCrud = require(path.join(__dirname,'templates/js'));
 
-var crudSubGenerator = yeoman.generators.NameBase.extend({
-  initialize: function(){
+var crudSubGenerator = yeoman.generators.NamedBase.extend({
+  initializing: function(){
+    this.option('coffee');
     //namebase is resource name
-
 
 
     //TODO: find server/resources
@@ -17,7 +20,46 @@ var crudSubGenerator = yeoman.generators.NameBase.extend({
         //Put
     //TODO: Generate file in server/models
       //one file (upper case)
+  },
+
+  prompting: function() {
+    var done = this.async();
+    if(!this.name){
+      console.log('Run command yo fission:crud <resourceName> with an argument');
+      var prompts = [{
+        type: 'input',
+        name: 'crudName',
+        message: 'Your resource name: ',
+        }];
+
+      this.prompts(prompts, function(props) {
+        this.crudName = props.crudName;
+        console.log(this.crudName);
+        done();
+      }.bind(this));
+    }
+
+    else{
+
+    }
+  },
+
+  writing: {
+    app: function(){
+      if(this.options.coffee || this.config.get('coffee')){
+        coffeeCrud(this);
+      }
+      else{
+        //jsCrud(this);
+      }
+    }
+  },
+
+  end: function(){
+
   }
+
+
 });
 
 module.exports = crudSubGenerator;
