@@ -18,8 +18,6 @@ paths =
   public: './public'
   coffeeSrc: './client/start.coffee'
 
-gulp.task 'server', (cb) ->
-require './start'
 
 # javascript
 gulp.task 'coffee', ->
@@ -50,4 +48,4 @@ gulp.task 'stylus', ->
 gulp.task 'watch', ->
   awatch gulp, paths
 
-gulp.task 'default', ['coffee', 'html', 'stylus', 'server', 'watch']
+gulp.task 'default', ['coffee', 'html', 'stylus', 'watch']

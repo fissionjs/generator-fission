@@ -61,11 +61,18 @@ var FissionGenerator = yeoman.generators.Base.extend({
 
       if(this.createWithServer){
         this.dest.mkdir('server');
-        this.dest.mkdir('server/http');
-        this.dest.mkdir('server/http/api');
-        this.dest.mkdir('server/http/passport');
+        this.dest.mkdir('server/config');
         this.dest.mkdir('server/db');
+        this.dest.mkdir('server/http/apis');
+        this.dest.mkdir('server/http/express');
+        this.dest.mkdir('server/http/passport');
+        this.dest.mkdir('server/lib');
         this.dest.mkdir('server/models');
+        this.dest.mkdir('server/user');
+        this.dest.mkdir('server/seed');
+        this.dest.mkdir('server/test');
+        this.dest.mkdir('server/test/lib');
+        this.dest.mkdir('server/test/user');
 
         //require server package.json
         this.pkg = require(path.join(__dirname,'templates/_withServerPackage.json'));

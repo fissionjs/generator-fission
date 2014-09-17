@@ -2,7 +2,7 @@ express = require 'express'
 http = require 'http'
 {join} = require 'path'
 
-PORT = Number process.env.PORT or 8080
+PORT = Number process.env.PORT or 9090
 
 app = express()
 app.use express.static join __dirname, 'public'

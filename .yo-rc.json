@@ -1,3 +1,6 @@
 {
-  "generator-generator": {}
+  "generator-fission": {
+    "fission" : "fission",
+    "crud" : "crud"
+  }
 }
