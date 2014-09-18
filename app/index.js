@@ -11,6 +11,7 @@ var FissionGenerator = yeoman.generators.Base.extend({
   initializing: function () {
     //this.pkg = require('../package.json');
     this.option('coffee');
+
   },
 
   prompting: function () {
@@ -43,18 +44,20 @@ var FissionGenerator = yeoman.generators.Base.extend({
   },
 
   configuring: function() {
-    if(this.options.coffee){
-      this.config.set({'coffee': 'true'});
-    }
-    else{
-      this.config.set({'coffee': 'false'});
-    }
   },
 
   writing: {
     app: function () {
       this.dest.mkdir(this.projectName);
       this.destinationRoot(this.projectName);
+
+      if(this.options.coffee){
+        this.config.set({'coffee': 'true'});
+      }
+      else{
+        this.config.set({'coffee': 'false'});
+      }
+      
       //create client directory
       this.dest.mkdir('client');
       this.dest.mkdir('client/css');

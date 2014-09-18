@@ -9,7 +9,14 @@ var crudSubGenerator = yeoman.generators.NamedBase.extend({
   initializing: function(){
     this.option('coffee');
     //namebase is resource name
-
+    if(this.options.coffee || this.config.get('coffee')){
+      console.log('do coffee');
+      coffeeCrud(this);
+    }
+    else{
+      console.log('do js');
+      //jsCrud(this);
+    }
 
     //TODO: find server/resources
     //TODO: generate folder in server/resources
@@ -20,6 +27,7 @@ var crudSubGenerator = yeoman.generators.NamedBase.extend({
         //Put
     //TODO: Generate file in server/models
       //one file (upper case)
+
   },
 
   prompting: function() {
@@ -45,14 +53,6 @@ var crudSubGenerator = yeoman.generators.NamedBase.extend({
   },
 
   writing: {
-    app: function(){
-      if(this.options.coffee || this.config.get('coffee')){
-        coffeeCrud(this);
-      }
-      else{
-        //jsCrud(this);
-      }
-    }
   },
 
   end: function(){
