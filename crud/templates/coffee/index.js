@@ -15,11 +15,12 @@
 // //coffeeCrud.src.copy('coffee/models/Item.coffee', 'server/models/Item.coffee');
 //
 // self.src.copy('coffee/index.js', 'crudcoffee.js');
+
 module.exports = function(coffeeCrud){
   var self = coffeeCrud;
 
   self.dest.mkdir('server/resources/'+self.name);
   self.directory('coffee/resources', 'server/resources/'+self.name);
-  self.src.copy('coffee/models/Item.coffee', 'server/models/'+self.name+'.coffee');
+  self.src.copy('coffee/models/Item.coffee', 'server/models/'+self.normalizedName+'.coffee');
 
 };

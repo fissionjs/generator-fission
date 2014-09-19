@@ -5,6 +5,14 @@ var yeoman = require('yeoman-generator');
 var coffeeCrud = require(path.join(__dirname,'templates/coffee'));
 //var jsCrud = require(path.join(__dirname,'templates/js'));
 
+'use strict';
+
+var normalize = function(fileName){
+  return fileName.charAt(0).toUpperCase() + fileName.slice(1);
+};
+
+
+
 var crudSubGenerator = yeoman.generators.NamedBase.extend({
   initializing: function(){
     this.option('coffee');
@@ -45,7 +53,8 @@ var crudSubGenerator = yeoman.generators.NamedBase.extend({
     // }
   },
 
-  runthatshit: function(){
+  writeFiles: function(){
+    this.normalizedName = normalize(this.name);
     if(this.options.coffee || this.config.get('coffee')){
       console.log('do coffee');
       coffeeCrud(this);
