@@ -33,12 +33,19 @@ var FissionGenerator = yeoman.generators.Base.extend({
         name: 'createWithServer',
         message: 'Would you like to create with a server?',
         default: true
+      },
+      {
+        type: 'list',
+        name: 'authentication',
+        message: 'Choose an authentication method: ',
+        choices: ['Twitter', 'Facebook', 'email/username']
       }];
 
     this.prompt(prompts, function (props) {
       this.createWithServer = props.createWithServer;
       this.projectName = props.projectName;
-      console.log(this.projectName);
+      this.authChoice = props.authentication;
+      console.log(this.authChoice);
       done();
     }.bind(this));
   },
@@ -57,7 +64,7 @@ var FissionGenerator = yeoman.generators.Base.extend({
       else{
         this.config.set({'coffee': 'false'});
       }
-      
+
       //create client directory
       this.dest.mkdir('client');
       this.dest.mkdir('client/css');

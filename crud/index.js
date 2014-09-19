@@ -9,14 +9,6 @@ var crudSubGenerator = yeoman.generators.NamedBase.extend({
   initializing: function(){
     this.option('coffee');
     //namebase is resource name
-    if(this.options.coffee || this.config.get('coffee')){
-      console.log('do coffee');
-      coffeeCrud(this);
-    }
-    else{
-      console.log('do js');
-      //jsCrud(this);
-    }
 
     //TODO: find server/resources
     //TODO: generate folder in server/resources
@@ -31,28 +23,37 @@ var crudSubGenerator = yeoman.generators.NamedBase.extend({
   },
 
   prompting: function() {
-    var done = this.async();
-    if(!this.name){
-      console.log('Run command yo fission:crud <resourceName> with an argument');
-      var prompts = [{
-        type: 'input',
-        name: 'crudName',
-        message: 'Your resource name: ',
-        }];
-
-      this.prompts(prompts, function(props) {
-        this.crudName = props.crudName;
-        console.log(this.crudName);
-        done();
-      }.bind(this));
-    }
-
-    else{
-
-    }
+    //var done = this.async();
+    //This block does nothing
+    // if(!this.name){
+    //   console.log('Run command yo fission:crud <resourceName> with an argument');
+    //   var prompts = [{
+    //     type: 'input',
+    //     name: 'crudName',
+    //     message: 'Your resource name: ',
+    //     }];
+    //
+    //   this.prompts(prompts, function(props) {
+    //     this.crudName = props.crudName;
+    //     console.log(this.crudName);
+    //     done();
+    //   }.bind(this));
+    // }
+    //
+    // else{
+    //
+    // }
   },
 
-  writing: {
+  runthatshit: function(){
+    if(this.options.coffee || this.config.get('coffee')){
+      console.log('do coffee');
+      coffeeCrud(this);
+    }
+    else{
+      console.log('do js');
+      //jsCrud(this);
+    }
   },
 
   end: function(){
