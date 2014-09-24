@@ -1,5 +1,5 @@
 'use strict';
-var util = require('util');
+
 var path = require('path');
 var yeoman = require('yeoman-generator');
 var yosay = require('yosay');
@@ -38,7 +38,7 @@ var FissionGenerator = yeoman.generators.Base.extend({
         type: 'list',
         name: 'authentication',
         message: 'Choose an authentication method: ',
-        choices: ['Twitter', 'Facebook', 'email/username']
+        choices: ['Twitter', 'Facebook'] //,'email/username'] // email does not function
       }];
 
     this.prompt(prompts, function (props) {

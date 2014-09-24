@@ -21,18 +21,21 @@ paths =
 
 # javascript
 gulp.task 'coffee', ->
-    bCache = {}
-    b = browserify paths.coffeeSrc,
-      debug: true
-      insertGlobals: false
-      cache: bCache
-      extensions: ['.coffee']
-    b.transform coffeeify
-    b.bundle()
-    .pipe source "start.js"
-    .pipe buffer()
-    .pipe gulp.dest paths.public
-    .pipe reload()
+  bCache = {}
+  b = browserify paths.coffeeSrc,
+    debug: true
+    insertGlobals: false
+    cache: bCache
+    extensions: ['.coffee']
+  b.transform coffeeify
+  b.bundle()
+  .pipe source "start.js"
+  .pipe buffer()
+  .pipe gulp.dest paths.public
+  .pipe reload()
+
+gulp.task 'server', ->
+  require './server/start'
 
 gulp.task 'html', ->
   gulp.src paths.html
@@ -48,4 +51,4 @@ gulp.task 'stylus', ->
 gulp.task 'watch', ->
   awatch gulp, paths
 
-gulp.task 'default', ['coffee', 'html', 'stylus', 'watch']
+gulp.task 'default', ['coffee', 'html', 'stylus', 'watch', 'server']

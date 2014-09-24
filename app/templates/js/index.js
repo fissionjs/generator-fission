@@ -36,7 +36,7 @@ module.exports = function(jsGenerator){
     self.src.copy('js/server/http/passport/createAuthScript.js', 'server/http/passport/createAuthScript.js');
     self.src.copy('js/server/http/passport/index.js', 'server/http/passport/index.js');
 
-    self.src.copy('js/server/http/index.js', 'sever/http/index.js');
+    self.src.copy('js/server/http/index.js', 'server/http/index.js');
     self.src.copy('js/server/start.js', 'server/start.js');
 
     self.src.copy('js/server/gulpfile.js', 'gulpfile.js');

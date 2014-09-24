@@ -19,22 +19,22 @@ paths =
   coffeeSrc: './client/start.coffee'
 
 gulp.task 'server', (cb) ->
-require './start'
+  require './start'
 
 # javascript
 gulp.task 'coffee', ->
-    bCache = {}
-    b = browserify paths.coffeeSrc,
-      debug: true
-      insertGlobals: false
-      cache: bCache
-      extensions: ['.coffee']
-    b.transform coffeeify
-    b.bundle()
-    .pipe source "start.js"
-    .pipe buffer()
-    .pipe gulp.dest paths.public
-    .pipe reload()
+  bCache = {}
+  b = browserify paths.coffeeSrc,
+    debug: true
+    insertGlobals: false
+    cache: bCache
+    extensions: ['.coffee']
+  b.transform coffeeify
+  b.bundle()
+  .pipe source "start.js"
+  .pipe buffer()
+  .pipe gulp.dest paths.public
+  .pipe reload()
 
 gulp.task 'html', ->
   gulp.src paths.html
