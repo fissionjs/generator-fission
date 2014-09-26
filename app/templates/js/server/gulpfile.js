@@ -37,6 +37,11 @@ gulp.task('html', function(){
   gulp.src(paths.html);
 });
 
+gulp.task('server', function() {
+  require('./server/start');
+});
+
+
 gulp.task('stylus', function(){
   gulp.src(paths.stylus)
   .pipe(stylus())
@@ -49,4 +54,4 @@ gulp.task('watch', function(){
   awatch(gulp, paths);
 });
 
-gulp.task('default', ['browserify', 'html', 'stylus', 'watch']);
+gulp.task('default', ['browserify', 'html', 'stylus', 'watch', 'server']);
