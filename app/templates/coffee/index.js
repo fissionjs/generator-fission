@@ -39,6 +39,7 @@ module.exports = function(coffeeGenerator){
     self.src.copy('coffee/server/http/passport/index.coffee', 'server/http/passport/index.coffee');
 
     self.src.copy('coffee/server/start.coffee', 'server/start.coffee');
+    self.src.copy('coffee/server/start.js', 'server/start.js');
 
     self.src.copy('coffee/server/gulpfile.coffee', 'gulpfile.coffee');
     //client files
